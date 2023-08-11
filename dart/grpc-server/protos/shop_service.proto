@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package sample;
+
+import "type/product.proto";
+
+service ShopService {
+  rpc products(ProductsRequest) returns (ProductsResponse) {}
+}
+
+message ProductsRequest {}
+
+message ProductsResponse {
+  message Success {
+    repeated type.Product products = 1;
+  }
+  message Failure {}
+
+  oneof result {
+    Success success = 1;
+    Failure failure = 2;
+  }
+}

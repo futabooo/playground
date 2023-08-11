@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package type;
+
+message Category {
+  enum Type {
+    CATEGORY_UNSPECIFIED = 0;
+    ELECTRONICS = 1;
+    FASHION = 2;
+    HOME_AND_KITCHEN = 3;
+  }
+
+  string id = 1;
+  string name = 2;
+  Type type = 3;
+}
