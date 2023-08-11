@@ -2,5 +2,5 @@
 
 ## Author
 
-[futabooo](https://github.com/futabooo) <mail@futabooo.com>
+[futabooo](https://github.com/futabooo)
 
