@@ -15,13 +15,12 @@ Future<void> main(List<String> args) async {
 
   try {
     final response = await stub.echo(
-      EchoRequest(message: 'echo'),
+      EchoRequest()..message = 'echo',
       options: CallOptions(timeout: Duration(seconds: 2)),
     );
     print('Sample client received: ${response.message}');
   } catch (e) {
     print('Caught error: $e');
-    
   }
   await channel.shutdown();
 }

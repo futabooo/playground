@@ -1,4 +1,5 @@
 import 'dart:async';
+
 import 'package:grpc/grpc.dart' as grpc;
 import 'package:grpc_server/src/generated/sample.pbgrpc.dart';
 
@@ -8,12 +9,12 @@ class SampleService extends SampleServiceBase {
     print('before sleep');
     await new Future.delayed(new Duration(seconds: 3));
     print('aftre sleep');
-    return EchoResponse(message: 'server received echo');
+    return EchoResponse()..message = 'server received echo';
   }
 }
 
 Future<void> main(List<String> args) async {
-  final server = grpc.Server([SampleService()]);
+  final server = grpc.Server.create(services: [SampleService()]);
   await server.serve(port: 50051);
   print('Server listening on port ${server.port}...');
 }
