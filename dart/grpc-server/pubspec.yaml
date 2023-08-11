@@ -9,7 +9,7 @@ environment:
 dependencies:
   async: ^2.2.0
   grpc: ^3.0.2
-  protobuf: ^2.0.0
+  protobuf: ^3.0.0
 
 dev_dependencies:
   test: ^1.6.0
